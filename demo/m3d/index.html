@@ -1,0 +1,110 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="m3d-core.js"></script>
+        <script type="text/javascript" src="Shape.js"></script>
+
+    </head>
+    <body>
+    <canvas id="canvas" width="1000" height="600"></canvas>
+    <script type="text/javascript" >
+        var V=m3d.Vector,M=m3d.Matrix,F=m3d.Face,Sh=m3d.Shape,Sc=m3d.Scene,Ca=m3d.Camera,L=m3d.Light,C=m3d.CRender,P=m3d.Particle;
+        var s1=Sh.createBox(8);
+        s1.transform.rotateY(1);
+        s1.fillColor=[255,255,255,1]
+        s1.strokeColor=[25,25,25,1]
+        var s2=Sh.createBox(2);
+        s2.inject(s1);
+        s2.transform=M.translate(0,0,8.5);
+        s2.fillColor=[255,255,255,1]
+         s2.strokeColor=[25,25,25,1]
+        var s3=Sh.createBox(0.8);
+        s3.transform=M.translate(0,-2.4,0);
+        s3.inject(s2);
+        s3.fillColor=[255,255,255,1]
+         s3.strokeColor=[25,25,25,1]
+        var s4=Sh.createBox(0.2);
+        s4.transform=M.translate(1.2,0,0);
+        s4.inject(s3);
+        s4.fillColor=[255,255,255,1]
+         s4.strokeColor=[25,25,25,1]
+        var $=function(id){
+            return document.getElementById(id);
+        }
+        var c=new m3d.CRender({
+            canvas:$('canvas')
+        });
+        var s5=Sh.createHeart();
+        s5.fillColor=[250,172,244,1];
+        c.light=new L();
+        
+        var i =0;
+        var j=0;
+        var md=false;
+        var skd=false;
+        var ex=0,ey=0;
+        var update=function(dz){
+            c.clear();
+
+            if(!dz) {
+                
+                c.camera.transform=M.rotateN(0,i,0).multi(c.camera.transform)
+            }else{
+                c.camera.transform= c.camera.transform.multi(M.translate(0,0,dz/3));
+            }
+            
+            c. drawShape(c.resolveShapes([s1,s2,s3,s4]),true,true)
+
+        }
+        function registerMouseWheelListener(canvas, listener) {
+            function handler(e) {
+                var scale=e.detail ? -e.detail : e.wheelDelta/40;
+                update(scale)
+                e.stopPropagation();
+                e.preventDefault();
+                return false;
+            }
+            document.addEventListener('DOMMouseScroll', handler, false);
+            document.addEventListener('mousewheel', handler, false);
+        }
+        registerMouseWheelListener();
+        document.addEventListener('mousedown',function(e){
+            md=true;
+            ex=e.clientX;
+            ey=e.clientY;
+        },false)
+        document.addEventListener('mouseup',function(e){
+            md=false;
+        },false)
+        document.addEventListener('mousemove',function(e){
+            if (md==false) return;
+            var tx=ex,ty=ey;
+            ex=e.clientX;
+            ey=e.clientY;
+
+
+            i=(ex-tx)/100;
+            j=(ey-ty)/100;
+            update();
+
+        },false)
+        var movebox=function(){
+
+            c.clear();
+            s4.transform.rotateZ(.1)
+            s3.transform.rotateX(.06)
+            s2.transform.rotateY(.03)
+            c. drawShape(c.resolveShapes([s1,s2,s3,s4]))
+        }
+        setInterval(movebox,30)
+
+    </script>
+</body>
+
+</html>
