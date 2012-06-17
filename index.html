@@ -9,8 +9,11 @@
   <meta name="author" content="luobo">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="var s={};
+scale=scale||.8;
+var fM=M.scale(scale,scale,1).translate(0,0,1);
+var bM=M.scale(scale,scale,1).translate(0,0,-1);
+var l=obj.verticles. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,7 +101,14 @@
   </header>
 
 
-  <div class="entry-content">
+  <div class="entry-content"><pre><code>var s={};
+scale=scale||.8;
+var fM=M.scale(scale,scale,1).translate(0,0,1);
+var bM=M.scale(scale,scale,1).translate(0,0,-1);
+var l=obj.verticles.length;
+var fVerticles=fM.transforms(obj.verticles,true);
+var bVerticles=bM.transforms(obj.verticles,true);
+</code></pre>
 </div>
   
   

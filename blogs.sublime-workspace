@@ -1,0 +1,519 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Mat",
+				"Mat3"
+			],
+			[
+				"Ma",
+				"Mat3"
+			],
+			[
+				"stati",
+				"staticOnly"
+			],
+			[
+				"stat",
+				"staticOnly"
+			],
+			[
+				"typ",
+				"TypedArray"
+			],
+			[
+				"app",
+				"append"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"req",
+				"requireBoost"
+			],
+			[
+				"sta",
+				"staticOnly"
+			],
+			[
+				"go",
+				"glMathBoost"
+			],
+			[
+				"cons",
+				"constructor"
+			],
+			[
+				"de",
+				"describe	Mocha describe snippet"
+			],
+			[
+				"eq",
+				"eql"
+			],
+			[
+				"ty",
+				"TypedArray"
+			],
+			[
+				"e",
+				"eql"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"gl",
+				"glMath"
+			],
+			[
+				"ex",
+				"extend"
+			],
+			[
+				"V",
+				"Vec3API"
+			],
+			[
+				"deg",
+				"deg2rad"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"leng",
+				"lengthSq"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "---\nlayout: post\ntitle: \"Hello Octopress\"\ndate: 2012-06-17 12:06\ncomments: true\ncategories: \n---\n\n",
+			"file": "_posts/2012-06-17-hello-octopress.markdown",
+			"file_size": 104,
+			"file_write_time": 129843891756671696,
+			"settings":
+			{
+				"buffer_size": 98,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 161.0,
+		"selected_items":
+		[
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"mar",
+				"Markdown Preview: current file in browser"
+			],
+			[
+				":e",
+				":$ - EOF"
+			],
+			[
+				":s/n/N",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"ma",
+				"Markdown Preview: current file in browser"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				":help",
+				"Set Syntax: Shell Script (Bash)"
+			]
+		],
+		"width": 402.0
+	},
+	"console":
+	{
+		"height": 166.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/F/blogs/leeluolee.github.com/source/_includes/custom/navigation.html",
+		"/F/blogs/leeluolee.github.com/_config.yml",
+		"/F/build/build/demo/m3d/build/test.html",
+		"/F/blogs/leeluolee.github.com/.themes/classic/source/_includes/custom/navigation.html",
+		"/F/blogs/leeluolee.github.com/source/_includes/navigation.html",
+		"/F/blogs/leeluolee.github.com/source/_includes/post/categories.html",
+		"/F/blogs/leeluolee.github.com/source/_layouts/page.html",
+		"/F/blogs/leeluolee.github.com/source/_layouts/default.html",
+		"/F/blogs/leeluolee.github.com/source/about/index.markdown",
+		"/F/JsCandy/math/webgl-matrix-benchmarks/libs/closure/goog/vec/vec.js",
+		"/C/Users/ADMINI~1/AppData/Local/Temp/Rar$DRa0.977/matrixProjection/src/ViewGL.h",
+		"/C/Users/ADMINI~1/AppData/Local/Temp/Rar$DRa0.337/matrixProjection/src/wcharUtil.h",
+		"/F/JsCandy/math/js/test.js",
+		"/D/sublime/Data/Packages/User/Preferences.sublime-settings",
+		"/D/sublime/Data/Packages/User/Requirejs/describe.sublime-snippet",
+		"/D/sublime/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/F/luolibs/game/football/public/js/utils/math.js",
+		"/F/luolibs/game/football/public/js/math/Vec3.js",
+		"/F/JsCandy/math/js/main.js",
+		"/F/JsCandy/math/js/chai.js",
+		"/F/luolibs/game/football/public/js/math/event.js",
+		"/F/JsCandy/Makefile",
+		"/F/JsCandy/math/Makefile",
+		"/F/JsCandy/math/vendor/mocha.js",
+		"/F/JsCandy/math/test.js",
+		"/F/JsCandy/math/css/mocha.css",
+		"/F/JsCandy/math/js/Makefile",
+		"/D/sublime/Data/Packages/User/Requirejs/it.sublime-snippet",
+		"/F/JsCandy/template/js/Makefile",
+		"/D/sublime/Data/Packages/User/Requirejs/require.sublime-snippet",
+		"/F/JsCandy/math/package.json",
+		"/F/JsCandy/template/package.json",
+		"/F/JsCandy/tween/js/easing.js",
+		"/F/JsCandy/math/js/math.js",
+		"/D/sublime/Data/Packages/Default/Preferences.sublime-settings",
+		"/F/luolibs/webgl/public/js/math.js",
+		"/F/JsCandy/event/Makefile",
+		"/D/sublime/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/F/sublime/Data/Packages/User/Preferences.sublime-settings",
+		"/F/git_folder/webgl/app.js",
+		"/F/git_folder/webgl/public/index.html",
+		"/F/git_folder/evernote/webgl-math.md",
+		"/F/git_folder/evernote/sublime-vi.md"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"0",
+			"v1",
+			"0",
+			"rhs.",
+			"m",
+			"m1",
+			"result",
+			"m2",
+			"m1",
+			"resultMat",
+			"mat1",
+			"mat0",
+			"m2[0]",
+			"m1[0]",
+			"n",
+			"m",
+			"M",
+			"m",
+			"M",
+			"m",
+			"M",
+			"m",
+			"M",
+			"m",
+			"+",
+			"-",
+			"2",
+			"8",
+			"1",
+			"0",
+			"3",
+			"2",
+			"0",
+			"1",
+			"0",
+			"rowNum",
+			"},",
+			"[type]",
+			"type",
+			"add",
+			"+",
+			"0",
+			"3",
+			"x",
+			"v1",
+			"type",
+			"[description]",
+			"description",
+			"[type]",
+			"set",
+			"copy",
+			"0",
+			"be",
+			"arg",
+			"Vec3",
+			"c",
+			"Vec3",
+			"Vector3",
+			"neg",
+			"Mat4",
+			"3",
+			"Matrix3",
+			"extend",
+			"Bitstream",
+			"YaHei",
+			"Inconsolata",
+			"Monaco",
+			"Inconsolata",
+			"Monaco",
+			"deep",
+			"equal",
+			"...",
+			"describe",
+			"arguments",
+			"Ease",
+			"deepEqual",
+			"arguments",
+			"moudle",
+			"clone",
+			"this",
+			"constructer",
+			"api",
+			"Vec3",
+			"constructer",
+			"create",
+			"dest",
+			"constructer",
+			"genInstanceMethod",
+			"i",
+			"type",
+			"host",
+			"constructer",
+			"host",
+			"enhance",
+			"dest",
+			"typedArray",
+			"clone",
+			"deg",
+			"lengthSq",
+			"length",
+			"vec2",
+			"vec",
+			"/s",
+			"*",
+			"+",
+			"]+",
+			"0",
+			"Ease",
+			"depends",
+			"*",
+			"+",
+			"] += ",
+			"            ",
+			"0",
+			"up",
+			"0",
+			"this",
+			">",
+			"sub",
+			". (){}[]()(()) ",
+			"type",
+			"s"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"m1",
+			"m2",
+			"m1",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "_posts/2012-06-17-hello-octopress.markdown",
+					"settings":
+					{
+						"buffer_size": 98,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								98
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"posthel",
+				"_posts/2012-06-17-hello-octopress.markdown"
+			],
+			[
+				"vec3",
+				"webgl-matrix-benchmarks/libs/closure/goog/vec/vec3.js"
+			],
+			[
+				"clovec",
+				"webgl-matrix-benchmarks/libs/closure/goog/vec/vec4.js"
+			],
+			[
+				"vec",
+				"webgl-matrix-benchmarks/libs/closure/goog/vec/vec.js"
+			],
+			[
+				"closure.js",
+				"webgl-matrix-benchmarks/libs/closure/goog/vec/mat4.js"
+			],
+			[
+				"test",
+				"test.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"mai",
+				"js/main.js"
+			],
+			[
+				"vc",
+				"math/Vec2.js"
+			],
+			[
+				"publicin",
+				"public/index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/F/luolibs/webgl/webgl.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true
+}
