@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://leeluolee.github.com/atom.xml" rel="self"/>
   <link href="http://leeluolee.github.com/"/>
-  <updated>2012-06-17T15:05:48+08:00</updated>
+  <updated>2012-06-21T12:55:38+08:00</updated>
   <id>http://leeluolee.github.com/</id>
   <author>
     <name><![CDATA[luobo]]></name>
@@ -14,18 +14,20 @@
 
   
   <entry>
+    <title type="html"><![CDATA[关于Events]]></title>
+    <link href="http://leeluolee.github.com/blog/2012/06/17/another-event-lib/"/>
+    <updated>2012-06-17T18:14:00+08:00</updated>
+    <id>http://leeluolee.github.com/blog/2012/06/17/another-event-lib</id>
+    <content type="html"><![CDATA[<h1>#</h1>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Hello Octopress]]></title>
     <link href="http://leeluolee.github.com/blog/2012/06/17/hello-octopress/"/>
     <updated>2012-06-17T12:06:00+08:00</updated>
     <id>http://leeluolee.github.com/blog/2012/06/17/hello-octopress</id>
-    <content type="html"><![CDATA[<pre><code>var s={};
-scale=scale||.8;
-var fM=M.scale(scale,scale,1).translate(0,0,1);
-var bM=M.scale(scale,scale,1).translate(0,0,-1);
-var l=obj.verticles.length;
-var fVerticles=fM.transforms(obj.verticles,true);
-var bVerticles=bM.transforms(obj.verticles,true);
-</code></pre>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
