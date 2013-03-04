@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>拴萝卜的棍子</title>
+  <title>comeout | 拴萝卜的棍子</title>
   <meta name="author" content="leeluolee">
   
   <meta name="description" content="所有涉及javascript的一切(nodejs, frontend-develop, compile-to-js...etc) 和各种Web相关">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="comeout"/>
   <meta property="og:site_name" content="拴萝卜的棍子"/>
 
   <link href="/favicon.png" rel="icon">
@@ -42,8 +42,7 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
-
-  <article class="photo">
+<article class="photo">
   
   <div class="post-content">
     <header>
@@ -53,7 +52,7 @@
       
       
   
-    <h1 class="title"><a href="/2013/03/02/comeout/">comeout</a></h1>
+    <h1 class="title">comeout</h1>
   
 
     </header>
@@ -66,6 +65,24 @@
       
         
         
+        <!-- 
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
+ -->
       
       <div class="clearfix"></div>
     </footer>
@@ -73,57 +90,13 @@
 </article>
 
 
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-03-02T03:34:51.000Z"><a href="/2013/03/02/use-hexo/">Mar 2 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/03/02/use-hexo/">开始使用Hexo</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>去年毕业后配置Otcopress完后就没用过了,反正不会去折腾Ruby，发现问题也不好解决，索性就换到<a href="http://zespia.tw/hexo/">Hexo</a>了, 文档很丰富, 没有累赘的功能部署很快, 简单记录下</p>
-<h2>安装</h2>
-<p>直接npm安装:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div></code></pre></td><td class="code"><pre><code><div class="line"><span class="title">npm</span> install hexo -g</div><div class="line"><span class="title">cd</span> /path/to/your/blog/root</div><div class="line"><span class="title">hexo</span> init {your_site_name}</div></code></pre></td></tr></table></figure>
-
-<p>回忆下Otcopress在windows的安装简直不堪忍受, 数小时之久(当然我不熟悉Ruby这个生态圈也有关系)。</p>
-<h2>配置</h2>
-<p>主要是github的配置, 这里记得如果username.github.com这个仓库已经有了资源，要进行手动清理. 还有一个就是yaml里的deploy项要填写完整的Repository 地址(坑1), 如:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><code><div class="line-number">1</div><div class="line-number">2</div><div class="line-number">3</div><div class="line-number">4</div><div class="line-number">5</div><div class="line-number">6</div></code></pre></td><td class="code"><pre><code><div class="line"># <span class="class">Deployment</span></div><div class="line">## <span class="class">Docs</span>: <span class="method">http:</span>//zespia.tw/hexo/docs/deploy.html</div><div class="line"><span class="method">deploy:</span></div><div class="line">  <span class="method">type:</span> github</div><div class="line">  <span class="method">repository:</span> <span class="method">https:</span>//github.com/leeluolee/leeluolee.github.com</div><div class="line">  <span class="method">branch:</span> master</div></code></pre></td></tr></table></figure>
-
-<p>如果是项目的gh-pages, 则branch填gh-pages</p>
-<h2>结尾</h2>
-<p>Hexo是一个很精简的blog generator &amp;&amp; deploy, 完全满足技术人员日常的博客需求, 使用过Octopress的应该是完全没有学习成本, 本人是典型极简癖, 跟这个Hexo简直是一拍即合</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-</article>
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</section>
+</div></div>
     <aside id="sidebar" class="alignright">
 <div class="search">
   <form action="http://google.com/search" method="get" accept-charset="utf-8">
@@ -178,7 +151,7 @@ var disqus_shortname = 'leeluolee';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
