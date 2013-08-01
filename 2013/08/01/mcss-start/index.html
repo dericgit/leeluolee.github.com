@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>拴萝卜的棍子</title>
+  <title>MCSS的前世——初识CSS Preprocessor | 拴萝卜的棍子</title>
   <meta name="author" content="leeluolee">
   
   <meta name="description" content="所有涉及javascript的一切(nodejs, frontend-develop, compile-to-js...etc) 和各种Web相关">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="MCSS的前世——初识CSS Preprocessor"/>
   <meta property="og:site_name" content="拴萝卜的棍子"/>
 
   <link href="/favicon.png" rel="icon">
@@ -42,8 +42,7 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 
-
-  <article class="post">
+<article class="post">
   
   <div class="post-content">
     <header>
@@ -53,24 +52,51 @@
       
       
   
-    <h1 class="title"><a href="/2013/08/01/mcss-start/">MCSS的前世——初识CSS Preprocessor</a></h1>
+    <h1 class="title">MCSS的前世——初识CSS Preprocessor</h1>
   
 
     </header>
     <div class="entry">
       
         <h3>前言</h3>
-<p>
+<p><a name="more"></a></p>
+<h3>CSS的不足 —— 抽象能力</h3>
+<p>CSS是一个近乎完美富有表现力的语言（抛开永无止境的标准化进程不谈）, 但是仍有人诟病它的不足，总结下大概有以下几点</p>
+<ol>
+<li>难以维护</li>
+<li>无法做到DRY开发</li>
+<li>难以真正将既有经验积淀成实际的代码</li>
+<li>缺乏逻辑控制的能力</li>
+<li>..............</li>
+</ol>
+<p>这以上其实都可以归结为 <strong>抽象能力</strong> 的不足，这个所谓的抽象能力似乎听起来本身就很抽象。我们可以在维基对它的词条上一窥究竟: </p>
+<blockquote>
+<p>Abstraction tries to reduce and factor out details so that the programmer can focus on a few concepts at a time.</p>
+</blockquote>
+<p>事实上我们在编程中充斥不断的抽象提取的过程: 小到一个变量参数、一个函数、一个函数， 大到定义类、模块和基于以上的架构模式。都是为了抽离细节，关注更少。</p>
+<p>并不仅限于普通编程语言，CSS也有其抽象能力，那就它的名字的含义(层叠样式)，具体到实际开发时，可能是定义一个类名，进行增量的功能添加。</p>
+<h3> </h3>
+<h2>相关资源</h2>
+<ol>
+<li><a href="http://www.vanseodesign.com/css/abstraction/">Why Abstraction Can Improve Your CSS</a></li>
+</ol>
+
       
     </div>
     <footer>
       
         
-          <div class="alignleft">
-            <a href="/2013/08/01/mcss-start/#more" class="more-link">Read More</a>
-          </div>
+  
+  <div class="categories">
+    
+  </div>
+
         
-        
+  
+  <div class="tags">
+    <a href="/tags/mcss/">mcss</a>, <a href="/tags/css/">css</a>
+  </div>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -78,49 +104,13 @@
 </article>
 
 
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-03-02T03:34:51.000Z"><a href="/2013/03/02/use-hexo/">3月 2 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/03/02/use-hexo/">开始使用Hexo</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>去年毕业后配置Otcopress完后就没用过了,反正不会去折腾Ruby，发现问题也不好解决，索性就换到<a href="http://zespia.tw/hexo/">Hexo</a>了, 文档很丰富, 没有累赘的功能部署很快, 简单记录下</p>
-
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2013/03/02/use-hexo/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-</article>
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</section>
+</div></div>
     <aside id="sidebar" class="alignright">
 <div class="search">
   <form action="http://google.com/search" method="get" accept-charset="utf-8">
@@ -170,7 +160,7 @@ var disqus_shortname = 'leeluolee';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
