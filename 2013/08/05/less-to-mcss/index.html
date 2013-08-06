@@ -508,16 +508,146 @@ p{
 
 <p>这个不仅仅是LESS，是所有其它预处理器没有的能力！</p>
 <h3>4. 颜色函数</h3>
-<p>颜色函数
-mcss支持hsl以及hsla的色值格式，最终会被输出为rgba或者<code>#ccc</code></p>
-<p>与LESS不同的是，MCSS不提供类似<code>lighten</code>等动词的函数，统一为</p>
-<h3> </h3>
+<p>mcss支持hsl以及hsla的色值格式，最终会被输出为rgba或者<code>#ccc</code></p>
+<p>与LESS不同的是，MCSS不提供类似<code>lighten</code>等动词的函数，统一为rgb概念中的red、green、 blue 和 hsl概念中 的hue、saturation、lightness 以及alpha 这7个通道的调节，函数名分别为<code>r-adjust</code>,<code>g-adjust</code>,<code>b-adjust</code>,<code>h-adjust</code>,<code>s-adjust</code>,<code>l-adjust</code>,<code>a-adjust</code> 全部支持相对和绝对调节</p>
+<p>比如LESS中<code>lighten</code>、<code>darken</code>其实就是lightness的相对调节</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="variable">@color1</span><span class="symbol">:</span> lighten(<span class="comment">#ccc, 10%);</span>
+<span class="variable">@color2</span><span class="symbol">:</span> darken(<span class="comment">#ccc, 10%);</span>
+</pre></td></tr></table></figure>
+
+<p>在MCSS其实就是</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="variable">$color1</span> = l-adjust(#ccc, <span class="number">10</span><span class="variable">%)</span>; <span class="comment">//往亮调</span>
+<span class="variable">$color2</span> = l-adjust(#ccc, -<span class="number">10</span><span class="variable">%)</span>; <span class="comment">// 往暗调节</span>
+</pre></td></tr></table></figure>
+
+<p>所以MCSS的色值函数需要你对hsl颜色格式有一定的了解(前端开发应该这是必备的基础概念吧)</p>
+<h3>5. 操作符</h3>
+<p>MCSS支持所有LESS的操作符(或者说其实MCSS支持JS中的二元以及以下的所有操作符，并且优先级与JS完全一致)</p>
 <h2>一些LESS所欠缺的能力</h2>
 <h3>1.逻辑控制<code>@for</code>、<code>@if、@elseif、@else</code></h3>
 <p>由于LESS占用了<code>@at-keyword</code>，所以很难提供类似的语言功能。LESS提供一个在选择器上的扩展<code>when</code>但是能力仍然有限。</p>
 <h3>2.<code>@extend</code></h3>
-<p>mixin函数可以帮助我们实现代码片的复用，但是有个巨大的问题就是，mixin会让代码变得庞大，当有明显的派生关系时，我们可以使用<code>@extend</code>，<code>@extend</code>是一个源于SASS的概念，它会将派生类的选择器添加到基础类之后。</p>
+<p>mixin函数可以帮助我们实现代码片的复用，但是有个巨大的问题就是，mixin会让代码变得庞大(可以看看基于less的bootstrap的重复样式)，当有明显的派生关系时，我们可以使用<code>@extend</code>，<code>@extend</code>是一个源于SASS的概念，它会将派生类的选择器添加到基础类之后。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre>.u-ipt {
+  padding: <span class="number">5</span>px <span class="number">10</span>px;
+  box-shadow: inset <span class="number">1</span>px <span class="number">1</span>px <span class="number">3</span>px rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.3</span>);
+}
+
+.m-form{
+    input[<span class="typedef"><span class="keyword">type</span>="text"],</span>
+    input[<span class="typedef"><span class="keyword">type</span>="password"]<span class="container">{
+      @<span class="title">extend</span> .<span class="title">u</span>-<span class="title">ipt</span>;
+    }</span></span>
+}
+</pre></td></tr></table></figure>
+
+<p><strong>Outport</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="preprocessor">.u</span>-ipt,
+<span class="preprocessor">.m</span>-form input[type=<span class="string">"text"</span>],
+<span class="preprocessor">.m</span>-form input[type=<span class="string">"password"</span>]
+  padding:<span class="number">5</span>px <span class="number">10</span>px<span class="comment">;</span>
+  box-shadow:inset <span class="number">1</span>px <span class="number">1</span>px <span class="number">3</span>px rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.3</span>)<span class="comment">;</span>
+}
+</pre></td></tr></table></figure>
+
+<p>没有参数的<code>mixin</code>其实都可以用<code>@extend</code>来实现(但<code>@extend</code>一般用在有明显派生关系的ruleset)，MCSS支持多重<code>@extend</code>以及嵌套<code>@extend</code>，具体请查看MCSS主页</p>
 <h3>3.<code>@abstract</code></h3>
+<p>由于组件封装时，我们无法知道后续是否需要某个，<code>@abstract</code>这个@atrule的作用是，将一个或多个ruleset标记为不输出，但是仍然可以被派生。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="comment">//标记一个ruleset</span>
+@<span class="keyword">abstract</span> btn{
+  left: <span class="number">10</span>px
+}
+<span class="comment">//标记一整个块</span>
+@<span class="keyword">abstract</span> {
+  .btn{
+  }
+  .fbtn{
+  }
+}
+</pre></td></tr></table></figure>
+
+<p>你也可以抽象一整个文件, 它是<code>@import</code> 的抽象版</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>@<span class="keyword">abstract</span> <span class="string">'ui.mcss'</span>;
+</pre></td></tr></table></figure>
+
+<p>比如在团队开发时，<code>ui.mcss</code>已经被公有样式<code>base.mcss</code> import了(即会被所有页面所共用)，但是后续的页面中仍然需要使用ui.mcss的变量、函数或者ruleset，此时<code>@abstract出现了</code>;</p>
+<p><strong>ui.mcss</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="comment">// btn的mixin函数</span>
+<span class="variable">$btn</span> = {
+  padding: <span class="number">10</span>px
+}
+
+<span class="comment">// ui中的ruleset </span>
+.u-btn{
+  
+}
+</pre></td></tr></table></figure>
+
+<p><strong>index.mcss</strong> </p>
+<p>使用<code>@import</code> 会引入<code>ui.mcss</code>中的样式</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="at_rule">@<span class="keyword">import</span> ui.mcss
+</pre></td></tr></table></figure>
+
+<p><strong>page1.mcss</strong> </p>
+<p>使用<code>@absctract</code>，你不会引入任何样式， <strong>但是你仍然可以使用文件中的变量、函数和派生<code>ui.mcss</code>中的ruleset</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="variable">@abstract</span> <span class="string">'ui.mcss'</span>;
+
+.u-btn-<span class="number">2</span>{
+  <span class="variable">@extend</span> .u-btn; <span class="regexp">//</span> 仍然可以<span class="variable">@extend</span>
+  <span class="variable">$btn</span>();         <span class="regexp">//</span> 仍然可以使用变量、函数
+}
+</pre></td></tr></table></figure>
+
+<p>这样可以解决团队开发中的问题。一套代码完全取决于<code>@import</code>、<code>@abstract</code>和<code>@media</code>三者的调用会有不同的表现。</p>
 <h3>4.更好的出错信息以及sourcemap</h3>
 <p>在出现语法错误时，MCSS会给你更精确的信息</p>
 <p><img src="https://github-camo.global.ssl.fastly.net/9b3c4a1accf639b9dffbc877275e3e6cca9360c7/687474703a2f2f6c65656c756f6c65652e6769746875622e696f2f6d6373732f696d672f6572726f722e706e67" alt="error图"></p>
@@ -527,10 +657,10 @@ mcss支持hsl以及hsla的色值格式，最终会被输出为rgba或者<code>#c
 <p>相对于其他预处理器MCSS的命令行工具参数很简单，并且提供了代码的多种输出格式，以及自动编译的功能，基本上你已经无需其它工具的支持。具体请<code>npm install -g mcss</code> 并且<code>mcss -h</code> 一下</p>
 <hr>
 <h2>结尾感言</h2>
-<p>LESS的成功来源于它的<code>简单</code>，成功的阐述的所谓的<code>82法则</code>，同时也起到了普及CSS预处理器的作用，事实上解除并且熟悉了LESS的那些概念之后，接受MCSS或者SCSS都是比较轻松的事情。</p>
+<p>LESS的成功来源于它的<code>简单</code>，成功的阐述的所谓的<code>82法则</code>，同时也起到了普及CSS预处理器的作用，事实上接触并且熟悉了LESS的那些概念之后，接受MCSS或者SCSS都是比较轻松的事情。</p>
 <p>如果觉得LESS无法满足你的需求时</p>
 <blockquote>
-<p><strong>npm install -g mcss</strong>吧</p>
+<p><strong>npm install -g mcss</strong> 尝试一下吧！</p>
 </blockquote>
 <p><em>同时MCSS是个易用的CSS Parser哦</em></p>
 <p><br/></p>
