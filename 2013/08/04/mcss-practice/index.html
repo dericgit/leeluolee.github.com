@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>开始使用Hexo | 拴萝卜的棍子</title>
+  <title>CSS预处理器使用的一点点心得(此文未完成) | 拴萝卜的棍子</title>
   <meta name="author" content="leeluolee">
   
   <meta name="description" content="所有涉及javascript的一切(nodejs, frontend-develop, compile-to-js...etc) 和各种Web相关">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="开始使用Hexo"/>
+  <meta property="og:title" content="CSS预处理器使用的一点点心得(此文未完成)"/>
   <meta property="og:site_name" content="拴萝卜的棍子"/>
 
   <link href="/favicon.png" rel="icon">
@@ -48,51 +48,80 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-03-02T03:34:51.000Z"><a href="/2013/03/02/use-hexo/">3月 2 2013</a></time>
+        <time datetime="2013-08-04T08:39:51.000Z"><a href="/2013/08/04/mcss-practice/">8月 4 2013</a></time>
       
       
   
-    <h1 class="title">开始使用Hexo</h1>
+    <h1 class="title">CSS预处理器使用的一点点心得(此文未完成)</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>去年毕业后配置Otcopress完后就没用过了,反正不会去折腾Ruby，发现问题也不好解决，索性就换到<a href="http://zespia.tw/hexo/">Hexo</a>了, 文档很丰富, 没有累赘的功能部署很快, 简单记录下</p>
+        <p>软件开发领域，很多工具都是双刃剑，CSS预处理器也是如此，此文会从MCSS作者的使用角度提供一些使用MCSS的基本建议，帮助规避一些风险。</p>
+<p><em>前面章节的大部分建议对其它预处理器仍然有效</em></p>
 <a name="more"></a>
 
-<h2>安装</h2>
-<p>直接npm安装:</p>
+<h2>本文目录</h2>
+<ol>
+<li><a href="#var">参数控制</a></li>
+<li><a href="#outport">了解输入对输出的影响</a></li>
+<li><a href="#nest">嵌套层级不应过深</a></li>
+<li><a href="#mixin">mixin函数还是@extend?</a></li>
+<li><a href="#abstract">合理利用@abstract和@import</a></li>
+<li><a href="#closure">善加利用mcss的闭包特性</a></li>
+<li><a href="#for">了解@for循环可以做什么</a></li>
+<li><a href="#tips">一些使用技巧</a></li>
+</ol>
+<p><a name='var'></a></p>
+<h2>参数</h2>
+<p>1 参数名应该达意，尽量不要用缩写。</p>
+<p>  例如设置清除浮动的mixin函数，推荐使用<code>$clearfix</code>而不是<code>$cb</code>，需要缩短selector的话可以在设置类名时进行精简</p>
+<p>  比如整站的主色调为<code>red</code>, <code>$primary</code> 要优于</p>
+<p>2 每一个工程都应该有个类似 <strong><code>variable.mcss</code></strong> 的文件统一管理参数</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
-3
-</pre></td><td class="code"><pre><span class="title">npm</span> install hexo -g
-<span class="title">cd</span>/ path/to/your/blog/root
-<span class="title">hexo</span> init {your_site_name}
+</pre></td><td class="code"><pre>
+
 </pre></td></tr></table></figure>
 
-<p>回忆下Otcopress在windows的安装简直不堪忍受, 数小时之久(当然我不熟悉Ruby这个生态圈也有关系)。</p>
-<h2>配置</h2>
-<p>主要是github的配置, 这里记得如果username.github.com这个仓库已经有了资源，要进行手动清理. 还有一个就是yaml里的deploy项要填写完整的Repository 地址(坑1), 如:</p>
-<figure class="highlight lang-yaml"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre># <span class="class">Deployment</span>
-## <span class="class">Docs</span>: <span class="method">http:</span>//zespia.tw/hexo/docs/deploy.html
-<span class="method">deploy:</span>
-  <span class="method">type:</span> github
-  <span class="method">repository:</span> <span class="method">https:</span>//github.com/leeluolee/leeluolee.github.com
-  <span class="method">branch:</span> master
-</pre></td></tr></table></figure>
-
-<p>如果是项目的gh-pages, 则branch填gh-pages</p>
-<h2>书写</h2>
-<p>hexo支持摘要断行 <code>&lt;!-- more --&gt;</code></p>
+<p>3 对于可能的客户配置项的选项使用<code>?=</code>赋值符号</p>
+<p><a name='var'></a></p>
+<h2>首先你要清楚MCSS的每个特性对于输出的css的影响</h2>
+<p><a name='var'></a></p>
+<h2>嵌套层级不要太深(n &lt;= 3)</h2>
+<p>虽然嵌套的一种功能就是显示的表现出层级关系, 但是仍然不应该事无巨细的去描述。这其中有几点原因</p>
+<ol>
+<li>代码不美观，显得啰嗦</li>
+</ol>
+<p><strong>几点建议</strong></p>
+<ol>
+<li></li>
+</ol>
+<p><a name='var'></a></p>
+<h2>灵活使用mixin函数 以及 @extend</h2>
+<p>首先你要理解<code>@extend</code> 和 <code>mixin函数</code>的区别, <code>@extend</code>意味当前ruleset继承于指定的ruleset(由选择器唯一指定)，而<code>mixin函</code></p>
+<ol>
+<li><p><code>@extend</code> 显示继承某个ruleset无法传入参数, 而<code>mixin函数</code>可以传入参数</p>
+</li>
+<li><p><code>mixin函数</code>的后果时，函数调用后产生代码会混入原ruleset, 而<code>@extend</code>仅仅只是追加当前的<code>selectorlist</code>到被<code>@extend</code>的ruleset，如</p>
+</li>
+<li><p><code>mixin</code>在一个变量会造成多个影响时很有用，比如</p>
+</li>
+<li><p>没有规定无法同时使用<code>@extend</code>和<code>mixin函数</code></p>
+</li>
+<li></li>
+</ol>
+<p><a name='var'></a></p>
+<h2>合理利用好@abstract、@import</h2>
+<p><a name='var'></a></p>
+<h2>在封装你的基础库时善加利用MCSS的闭包特性</h2>
+<p>MCSS的闭包特性并不是无用的语法糖</p>
+<p><strong>举几个例子</strong></p>
+<h2>其它小技巧</h2>
+<hr>
 <h2>结尾</h2>
-<p>Hexo是一个很精简的blog generator &amp;&amp; deploy, 完全满足技术人员日常的博客需求, 使用过Octopress的应该是完全没有学习成本, 本人是典型极简癖, 跟这个Hexo简直是一拍即合</p>
+<p>其实mcss主要针对的用户群就是LESS的重度拥护者，而且了解了LESS相当于对CSS Preprocessor有了一定的了解，并且可能在应用中有了信息需求</p>
 
       
     </div>
@@ -107,7 +136,7 @@
         
   
   <div class="tags">
-    <a href="/tags/tool/">tool</a>, <a href="/tags/nodejs/">nodejs</a>
+    <a href="/tags/mcss/">mcss</a>, <a href="/tags/css/">css</a>
   </div>
 
       
