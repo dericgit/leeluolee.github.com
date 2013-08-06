@@ -4,7 +4,7 @@
   <subtitle><![CDATA[目标Web全栈式开发进发ing...]]></subtitle>
   <link href="http://leeluolee.github.com/atom.xml" rel="self"/>
   <link href="http://leeluolee.github.com"/>
-  <updated>2013-08-06T04:59:26.134Z</updated>
+  <updated>2013-08-06T05:11:23.312Z</updated>
   <id>http://leeluolee.github.com/</id>
   <author>
     <name><![CDATA[leeluolee]]></name>
@@ -16,7 +16,7 @@
     <link href="http://leeluolee.github.com/2013/08/05/less-to-mcss/"/>
     <id>http://leeluolee.github.com/2013/08/05/less-to-mcss/</id>
     <published>2013-08-05T13:40:04.000Z</published>
-    <updated>2013-08-06T04:21:45.000Z</updated>
+    <updated>2013-08-06T05:05:38.000Z</updated>
     <content type="html"><![CDATA[<h2>前言</h2>
 <p>虽然首页没有开始做，昨天仍决定将<a href="https://github.com/NetEaseWD/mcss">MCSS</a>从身边的基友们开始向杭研推广了，从开始做这个直到现在推广遇到最多的问题是：</p>
 <blockquote>
@@ -28,7 +28,7 @@
 
 <hr>
 <h2>LESS特性在MCSS中的对应</h2>
-<p>首先解答下LESS的特性在MCSS中的对应，这几乎也囊括了在实际生产使用时的70%的功能(实际生产并不包含基础类库封装)</p>
+<p>首先解答下LESS的特性在MCSS中的对应，这几乎也囊括了在实际生产使用时的80%的功能(实际生产并不包含基础类库封装)</p>
 <h3>1. 嵌套</h3>
 <p>MCSS与LESS等其它预处理器的嵌套规则完全一致，支持<code>&amp;</code>占位符，例如:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
@@ -70,7 +70,7 @@
 </pre></td></tr></table></figure>
 
 <p>MCSS同时支持另一个占位符<code>%</code>，与<code>&amp;</code>类似，但它不包含顶级的选择器</p>
-<p>比如有时候，我们需要在<code>.ms-form</code>的扩展类<code>.ms-form</code>中修改某层节点的样式，这时我们不需要重新重复一次书写，例如</p>
+<p>比如有时候，我们需要在<code>.ms-form</code>的扩展类<code>.ms-form-stack</code>中修改某层节点的样式，这时我们不需要重新重复一次书写，例如</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -532,7 +532,7 @@ p{
 
 <p>没有参数的<code>mixin</code>其实都可以用<code>@extend</code>来实现(但<code>@extend</code>一般用在有明显派生关系的ruleset)，MCSS支持多重<code>@extend</code>以及嵌套<code>@extend</code>，具体请查看MCSS主页</p>
 <h3>3.<code>@abstract</code></h3>
-<p>由于组件封装时，我们无法知道后续是否需要某个，<code>@abstract</code>这个@atrule的作用是，将一个或多个ruleset标记为不输出，但是仍然可以被派生。</p>
+<p>由于组件封装时，我们无法知道后续是否需要某个ruleset，<code>@abstract</code>这个@atrule的作用是，将一个或多个ruleset标记为不输出，但是仍然可以被派生。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
@@ -584,7 +584,7 @@ p{
 }
 </pre></td></tr></table></figure>
 
-<p><strong>index.mcss</strong> </p>
+<p><strong>base.mcss</strong> </p>
 <p>使用<code>@import</code> 会引入<code>ui.mcss</code>中的样式</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="at_rule">@<span class="keyword">import</span> ui.mcss
