@@ -12,8 +12,8 @@
 body {
   background: #eee;
   color: #444;
-  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-  font-size: 14px;
+  font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;
+  font-size: 16px;
   text-shadow: 0 0 1px transparent;
 }
 @media screen and (max-width: 1260px) {
@@ -32,16 +32,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft Yahei, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 h1 {
-  font-size: 1.8em;
+  font-size: 2em;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 a {
   text-decoration: none;
@@ -124,7 +124,7 @@ a:hover {
   margin-top: 10px;
 }
 #header #main-nav {
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft Yahei, Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
 }
 #header #main-nav ul {
@@ -138,6 +138,26 @@ article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   background: #fff;
+}
+article hr {
+  display: block;
+  position: relative;
+  width: 50%;
+  margin: 60px auto 50px auto;
+  border: 1px solid #dededc;
+}
+article hr::after {
+  content: '哥是分割线';
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  left: 48%;
+  font-size: 14px;
+  margin-left: -50px;
+  top: -10px;
+  color: #bebebe;
+  background: #fff;
+  text-align: center;
 }
 article.page {
   padding-left: 20px;
@@ -162,7 +182,7 @@ article.link .title a:after {
   vertical-align: super;
 }
 article .post-content {
-  padding: 20px 20px 15px 77px;
+  padding: 20px 20px 15px 67px;
   margin-bottom: 50px;
   position: relative;
 }
@@ -258,7 +278,7 @@ article header .icon:before {
 }
 article header time {
   color: #999;
-  font: 0.9em "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 0.9em Microsoft Yahei, Helvetica Neue, Helvetica, Arial, sans-serif;
   margin-bottom: 5px;
   display: block;
   line-height: 1;
@@ -291,7 +311,11 @@ article .entry h6,
 article .entry .video-container {
   margin-top: 15px;
 }
+article .entry p {
+  max-width: 90%;
+}
 article .entry blockquote {
+  margin-left: -50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   font-style: italic;
@@ -362,7 +386,6 @@ article .entry dl dl {
 article .entry h1,
 article .entry h2 {
   font-weight: normal;
-  border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-top: 20px;
 }
@@ -377,6 +400,17 @@ article .entry video {
   max-width: 100%;
   height: auto;
   border: none;
+}
+article .entry img {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 5px rgba(1,1,1,0.4);
+  box-shadow: 1px 1px 5px rgba(1,1,1,0.4);
+  border: 8px solid #fff;
+}
+article .entry img:hover {
+  -webkit-box-shadow: 1px 1px 8px rgba(1,1,1,0.4);
+  box-shadow: 1px 1px 8px rgba(1,1,1,0.4);
 }
 article .entry iframe {
   border: none;
@@ -494,7 +528,7 @@ article footer .addthis iframe {
   padding: 5px 10px;
   background: #ddd;
   color: #999;
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft Yahei, Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
   margin-bottom: 50px;
 }
@@ -593,7 +627,7 @@ article footer .addthis iframe {
 }
 #sidebar .search input {
   background: #fff;
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft Yahei, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 1em;
   padding: 10px 15px;
@@ -640,7 +674,7 @@ article footer .addthis iframe {
 #footer {
   color: #999;
   margin-bottom: 50px;
-  font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 0.9em/1.6 Microsoft Yahei, Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
 }
 .entry .gist {
