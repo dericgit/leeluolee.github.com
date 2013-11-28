@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[拴萝卜的棍子]]></title>
   <subtitle><![CDATA[目标Web全栈式开发进发ing...]]></subtitle>
-  <link href="http://leeluolee.github.com/atom.xml" rel="self"/>
-  <link href="http://leeluolee.github.com"/>
-  <updated>2013-08-06T05:11:23.312Z</updated>
-  <id>http://leeluolee.github.com/</id>
+  <link href="http://leeluolee.github.io/atom.xml" rel="self"/>
+  <link href="http://leeluolee.github.io"/>
+  <updated>2013-11-28T04:40:24.267Z</updated>
+  <id>http://leeluolee.github.io/</id>
   <author>
     <name><![CDATA[leeluolee]]></name>
     <email><![CDATA[87399126@163.com]]></email>
@@ -13,10 +13,10 @@
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
   <entry>
     <title type="html"><![CDATA[LESS to MCSS 指南]]></title>
-    <link href="http://leeluolee.github.com/2013/08/05/less-to-mcss/"/>
-    <id>http://leeluolee.github.com/2013/08/05/less-to-mcss/</id>
+    <link href="http://leeluolee.github.io/2013/08/05/less-to-mcss/"/>
+    <id>http://leeluolee.github.io/2013/08/05/less-to-mcss/</id>
     <published>2013-08-05T13:40:04.000Z</published>
-    <updated>2013-08-06T05:05:38.000Z</updated>
+    <updated>2013-08-06T14:00:16.000Z</updated>
     <content type="html"><![CDATA[<h2>前言</h2>
 <p>虽然首页没有开始做，昨天仍决定将<a href="https://github.com/NetEaseWD/mcss">MCSS</a>从身边的基友们开始向杭研推广了，从开始做这个直到现在推广遇到最多的问题是：</p>
 <blockquote>
@@ -616,7 +616,7 @@ p{
 <p>相对于其他预处理器MCSS的命令行工具参数很简单，并且提供了代码的多种输出格式，以及自动编译的功能，基本上你已经无需其它工具的支持。具体请<code>npm install -g mcss</code> 并且<code>mcss -h</code> 一下</p>
 <hr>
 <h2>结尾感言</h2>
-<p>LESS的成功来源于它的<code>简单</code>，成功的阐述的所谓的<code>82法则</code>，同时也起到了普及CSS预处理器的作用，事实上接触并且熟悉了LESS的那些概念之后，接受MCSS或者SCSS都是比较轻松的事情。</p>
+<p>LESS的成功来源于它的<code>简单</code>，成功的阐述了<code>82法则</code>，同时也起到了普及CSS预处理器的作用，事实上接触并且熟悉了LESS的那些概念之后，接受MCSS或者SCSS都是比较轻松的事情。</p>
 <p>如果觉得LESS无法满足你的需求时</p>
 <blockquote>
 <p><strong>npm install -g mcss</strong> 尝试一下吧！</p>
@@ -624,89 +624,144 @@ p{
 <p><em>同时MCSS是个易用的CSS Parser哦</em></p>
 <p><br/></p>
 ]]></content>
-    <category scheme="http://leeluolee.github.com/tags/mcss/" term="mcss"/>
-    <category scheme="http://leeluolee.github.com/tags/css/" term="css"/>
+    <category scheme="http://leeluolee.github.io/tags/mcss/" term="mcss"/>
+    <category scheme="http://leeluolee.github.io/tags/css/" term="css"/>
   </entry>
   <entry>
-    <title type="html"><![CDATA[CSS预处理器使用的一点点心得(此文未完成)]]></title>
-    <link href="http://leeluolee.github.com/2013/08/04/mcss-practice/"/>
-    <id>http://leeluolee.github.com/2013/08/04/mcss-practice/</id>
-    <published>2013-08-04T08:39:51.000Z</published>
-    <updated>2013-08-06T03:04:19.000Z</updated>
-    <content type="html"><![CDATA[<p>软件开发领域，很多工具都是双刃剑，CSS预处理器也是如此，此文会从MCSS作者的使用角度提供一些使用MCSS的基本建议，帮助规避一些风险。</p>
-<p><em>前面章节的大部分建议对其它预处理器仍然有效</em></p>
+    <title type="html"><![CDATA[CSS预处理器初识]]></title>
+    <link href="http://leeluolee.github.io/2013/08/01/mcss-start/"/>
+    <id>http://leeluolee.github.io/2013/08/01/mcss-start/</id>
+    <published>2013-08-01T14:49:03.000Z</published>
+    <updated>2013-09-10T07:32:22.000Z</updated>
+    <content type="html"><![CDATA[<h2>前言</h2>
+<p>这些年，从淘宝的工程师翻译LESS首页以及bootstrap带动的LESS热波及到了国内，预处理器开始渐渐被一些工程师所接受。 <a href="http://www.w3cplus.com/sassguide/comments.html">@w3cplus</a> 最近也开了一个预处理器专版,主要是针对SASS，版面不错(相较于SASS主页)。同时豆瓣也利用stylus封装了一个简单css framework, 目前三款预处理器算是都有了一定的受众(当然90%应该都是LESS用户)。</p>
+<p>此文会简单进行对预处理器的介绍并进行几款预处理器的简单对比(主要是加入了MCSS,类似的对比文是在太多了)。</p>
 <a name="more"></a>
 
-<h2>本文目录</h2>
+<hr>
+<h2>CSS的不足 —— 抽象能力</h2>
+<p>CSS是一个近乎完美且富有表现力的语言（抛开永无止境的标准化进程不谈）, 但是仍有很多开发者诟病它的不足，总结下大概有以下几点</p>
 <ol>
-<li><a href="#var">参数控制</a></li>
-<li><a href="#outport">了解输入对输出的影响</a></li>
-<li><a href="#nest">嵌套层级不应过深</a></li>
-<li><a href="#mixin">mixin函数还是@extend?</a></li>
-<li><a href="#abstract">合理利用@abstract和@import</a></li>
-<li><a href="#closure">善加利用mcss的闭包特性</a></li>
-<li><a href="#for">了解@for循环可以做什么</a></li>
-<li><a href="#tips">一些使用技巧</a></li>
+<li>难以维护</li>
+<li>无有效做到DRY(Dont repeat yourself)</li>
+<li>难以真正将既有经验积淀成实际的代码</li>
+<li>缺乏逻辑控制的能力</li>
+<li>..............</li>
 </ol>
-<p><a name='var'></a></p>
-<h2>参数</h2>
-<p>1 参数名应该达意，尽量不要用缩写。</p>
-<p>  例如设置清除浮动的mixin函数，推荐使用<code>$clearfix</code>而不是<code>$cb</code>，需要缩短selector的话可以在设置类名时进行精简</p>
-<p>  比如整站的主色调为<code>red</code>, <code>$primary</code> 要优于</p>
-<p>2 每一个工程都应该有个类似 <strong><code>variable.mcss</code></strong> 的文件统一管理参数</p>
+<p>这以上其实都可以归结为 <strong>抽象能力</strong> 的不足，这个所谓的抽象能力似乎听起来本身就很抽象。我们可以在维基对它的词条上一窥究竟: </p>
+<blockquote>
+<p>Abstraction tries to reduce and factor out details so that the programmer can focus on a few concepts at a time.</p>
+</blockquote>
+<p>是的， <strong>抽离细节，关注更少</strong> 这种抽离无所谓大小， 事实上我们在编程中充斥不断的抽象提取的过程: 小到一个变量参数、一个函数， 大到一个类、模块和基于以上的架构模式。</p>
+<p>并不仅限于普通编程语言，CSS也有其抽象能力，那就它的名字的含义—— <strong>层叠样式</strong> ，具体到实际开发时，我们做的有可能是定义一个类名，进行增量的功能添加。这几乎也是CSS仅有的抽象能力，也很容易引起滥用，比如设置一个<code>display:none</code>样式的类，然后一个个添加到html中，这其实是应该尽量避免的，过分依赖会导致效率低效和难以维护。</p>
+<p>以编程语言的眼光来看，CSS确实抽象能力不足，它也在不断发展（从几套css variable的草案进化就可以一窥端倪）来改善这个问题。但是它实际上并不是一般意义上的编程语言，它有其自身的切实关注点。 这时CSS Preprocessor来解围了。</p>
+<h2>初识CSS预处理器</h2>
+<p>我们先首先来回顾下CSS预处理这个领域的发展。再来看看它们帮我们解决了什么问题。</p>
+<h3>预处理的&#39;悠久&#39;历史</h3>
+<p>最原始的CSS预处理器的形式可以追溯到利用服务器端模板语言(如php)通过字符插值拼接输出css，最后慢慢演变为类似SASS的css预处理语言, 不过当时的预处理器偏重语言特性多一点, 与CSS的语法偏离较大(可以参考SASS的语法)。 </p>
+<p>之后LESS出现, LESS基于CSS语法的超集，带来的好处有很多，这个特性也被Sass社区所接纳。 随着SASS的另一个壳SCSS的产生，CSS-Preprocessor开始统一向着正确轨道靠拢——即基于CSS语法</p>
+<p>而11年出现的TJ大神的Stylus似乎要将社区带回最初SASS的位置(虽然它仍然可以支持原生css的写法), 依赖缩进和约定去除多余的符号(比如<code>;</code>、<code>:</code>、<code>{</code>);</p>
+<p>下一节我会仔细探讨下当前市面上的各个预处理</p>
+<h2>市面上的CSS预处理们</h2>
+<p>SASS、LESS、Stylus是非常优秀的开源产品, 每一个的产生都推动的社区的前进, 作为一个后来者，MCSS也是广泛参考Sass、Less社区讨论的衍生产物。MCSS也希望自己的理念可以解决前辈们没有解决或未关注到的问题。</p>
+<h3>1. <a href="http://sass-lang.com/">SASS</a> —— 最鲁棒和冗杂的预处理器鼻祖</h3>
+<p>SASS早在07年就有雏形产生，伴随着Rails社区不断发展壮大，到目前为止，仍然在CSS预处理器占有度中占据着半壁江山。google甚至直接在Chrome上对其进行实验性质的支持。
+但同时SASS也是有几个比较严重的问题的</p>
+<ol>
+<li><p>基于Ruby </p>
+<p>无法更有效的贴近目前实际的前端开发者，之前Sass的壮大主要是由于Rails这个一体化开发框架带来的效应，很多Web开发者承担着CSS的开发任务，而目前前端开发领域越来越复杂，更多的前端开发者有能力和需求去接受css预处理器。</p>
+</li>
+<li><p>语法有些冗杂</p>
+<p>这个一方面是由于Sass悠久的 <strong>历史包袱</strong>引起的, 另一方面也是对功能缺乏取舍的后果。比较典型的例子就是难以捉摸的<code>@extend</code>规则和那些循环语法们</p>
+</li>
+</ol>
+<p>从LESS、SASS的社区活跃度对比来看，这些年LESS要比SASS发展的要好得多，但是SASS比LESS在后续的扩展上要有更大的自由度——依赖自定义<code>@At-rule</code>，而这个在LESS中被占用成了变量声明，LESS只能在选择器上做文章了。</p>
+<h3>2. <a href="http://lesscss.org/">LESS</a> —— 最火和最像CSS的预处理器</h3>
+<p>目前版本的LESS是基于Nodejs构建，并且可以在浏览器中运行（在实际开发中请忘记这个功能），目前LESS在github上的start数达到了9000，作者遇到的同事用过预处理器的也几乎都是LESS的支持者。</p>
+<p><strong>LESS的火的原因是什么?</strong></p>
+<ol>
+<li><p>拥有50000+ star数的 <strong>bootstrap</strong></p>
+<p>有个大平台社区的推动，想不火都难啊。有多少人是因为bootstrap关注到LESS的？ 请举个手。反正我是的</p>
+</li>
+<li><p>最像CSS</p>
+<p>这个像指的是词法上最接近，热爱LESS的人们忘记CSS对于<code>@atrule</code>的定义吧，因为LESS使用了这个词法对象作为参数了，成就了简洁的美誉但是却影响了后续的功能扩展。这同时也带来了其它好处，比如几乎不需要去写对应的语法高亮了，开启css的就行，并且更容易被前端开发所接受。</p>
+</li>
+<li><p>突出了最常用的80%的功能</p>
+<p>众所周知，LESS晚于SASS除了语法上的不同，没有引入额外的功能，而是进行了精简，混合了<code>mixin</code>和<code>ruleset</code>虽然给后续扩展带来不足，但是确实是聪明的设计。</p>
+</li>
+</ol>
+<p>但是事实上，大家似乎很少注意到这点 </p>
+<blockquote>
+<p>LESS目前仍然没有出现过一个类似Compass这种功能层级的二级类库</p>
+</blockquote>
+<p>LESS目前有了extend了， 似乎SASS党们无法再攻击它的这个劣势，在我看来LESS似乎是往错误的方向又走了一步，比如两个并列的Selector，你如何判断哪个是extend的？如何处理层级的extend？这些本就可以通过扩展@atrule进行解决，但是设计上走错了一步会导致后续的扩展</p>
+<h3>3. <a href="http://learnboost.github.io/stylus/">Stylus</a> —— 让人眼前一亮的语法设计</h3>
+<p>Stylus是Node社区的大神TJ的大作， 看似更少的语法噪音(括号, 冒号，分号)，通过缩进来解释, 事实上可能带来维护的深渊，多种语法支持看似灵活，其实在团队开发中也可能带来灾难。 </p>
+<p>综上所述，对于以上三款，我偏向仍然是SASS(SCSS)。文章的末尾 </p>
+<h3>4. <a href="https://github.com/NeteaseWD/mcss">MCSS</a></h3>
+<p>从SASS出现，再到LESS(LESS在功能上只是子集), 再到Stylus, 语法特性整个社区其实一直在增加，但是无论它们任何一个，其实都没有解决或关注到一些一直存在的问题: </p>
+<ol>
+<li><p>无法控制一整个文件模块的输出</p>
+</li>
+<li><p>block不是一种值，无法传递进函数, 这让@keyframes、@media的封装成为不可能</p>
+</li>
+</ol>
+<p>MCSS是我最近完成的CSS预处理器，它同时也可以作为一个 <strong>易用的CSS Parser</strong> , 在小范围已经使用了约两个月， 已经有了完善的测试已经文档， 目前的版本是<code>0.3.4</code> 这里不会事无巨细的介绍太多它的功能点。有兴趣的可以参考</p>
+<hr>
+<h2>CSS预处理器的共性</h2>
+<p><em>共性是一种类似最佳实践的存在，被各个预处理器社区广泛接受和实现的特性。这里我会以Sass、Less、Mcss三种预处理器进行短暂介绍，以及帮助我们解决什么问题</em></p>
+<h4>1. 参数、赋值</h4>
+<p>参数是一种最基本的抽象, </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
+3
+4
+5
+6
+7
+8
+9
 </pre></td><td class="code"><pre>
+<span class="comment">//less</span>
+@primary: <span class="comment">#ccc;</span>
 
+<span class="comment">//scss</span>
+<span class="variable">$primary</span>: <span class="comment">#ccc;</span>
+
+<span class="comment">//mcss</span>
+<span class="variable">$primary</span> = <span class="comment">#ccc;</span>
 </pre></td></tr></table></figure>
 
-<p>3 对于可能的客户配置项的选项使用<code>?=</code>赋值符号</p>
-<p><a name='var'></a></p>
-<h2>首先你要清楚MCSS的每个特性对于输出的css的影响</h2>
-<p><a name='var'></a></p>
-<h2>嵌套层级不要太深(n &lt;= 3)</h2>
-<p>虽然嵌套的一种功能就是显示的表现出层级关系, 但是仍然不应该事无巨细的去描述。这其中有几点原因</p>
+<h2>CSS预处理的几个误区</h2>
+<h2>CSS预处理的几个良好实践</h2>
+<h3>1. 嵌套尽量不要超过三层</h3>
+<p>有人可能会疑问: _使用嵌套层级不就是为了更好的表明</p>
+<p>如果你发现你的源文件大范围的超过三层, 或许你应该重构你的html了</p>
+<h3>2.</h3>
+<h2>个人实际使用中的预处理器</h2>
+<h2>相关资源</h2>
 <ol>
-<li>代码不美观，显得啰嗦</li>
+<li><a href="http://www.vanseodesign.com/css/abstraction/">Why Abstraction Can Improve Your CSS</a></li>
+<li><a href="http://chriseppstein.github.io/blog/2009/09/20/why-stylesheet-abstraction-matters/">why stylesheet abstraction matters</a></li>
+<li><a href="http://dev.w3.org/csswg/css3-syntax/#parsing">CSS Syntax</a></li>
+<li><a href="http://css-tricks.com/poll-results-popularity-of-css-preprocessors/">几个预处理器的流行度对比 2012数据</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/CSS/Syntax">来自mdn的CSS syntax中文解释 短小精悍</a></li>
+<li><a href="http://css-tricks.com/musings-on-preprocessing/">musing on preprocessing</a></li>
 </ol>
-<p><strong>几点建议</strong></p>
+<h2>后续</h2>
 <ol>
-<li></li>
+<li>后续我会仔细阐述mcss的语法以及功能特性以及这个特性所要解决的问题</li>
 </ol>
-<p><a name='var'></a></p>
-<h2>灵活使用mixin函数 以及 @extend</h2>
-<p>首先你要理解<code>@extend</code> 和 <code>mixin函数</code>的区别, <code>@extend</code>意味当前ruleset继承于指定的ruleset(由选择器唯一指定)，而<code>mixin函</code></p>
-<ol>
-<li><p><code>@extend</code> 显示继承某个ruleset无法传入参数, 而<code>mixin函数</code>可以传入参数</p>
-</li>
-<li><p><code>mixin函数</code>的后果时，函数调用后产生代码会混入原ruleset, 而<code>@extend</code>仅仅只是追加当前的<code>selectorlist</code>到被<code>@extend</code>的ruleset，如</p>
-</li>
-<li><p><code>mixin</code>在一个变量会造成多个影响时很有用，比如</p>
-</li>
-<li><p>没有规定无法同时使用<code>@extend</code>和<code>mixin函数</code></p>
-</li>
-<li></li>
-</ol>
-<p><a name='var'></a></p>
-<h2>合理利用好@abstract、@import</h2>
-<p><a name='var'></a></p>
-<h2>在封装你的基础库时善加利用MCSS的闭包特性</h2>
-<p>MCSS的闭包特性并不是无用的语法糖</p>
-<p><strong>举几个例子</strong></p>
-<h2>其它小技巧</h2>
-<hr>
-<h2>结尾</h2>
-<p>其实mcss主要针对的用户群就是LESS的重度拥护者，而且了解了LESS相当于对CSS Preprocessor有了一定的了解，并且可能在应用中有了信息需求</p>
 ]]></content>
-    <category scheme="http://leeluolee.github.com/tags/mcss/" term="mcss"/>
-    <category scheme="http://leeluolee.github.com/tags/css/" term="css"/>
+    <category scheme="http://leeluolee.github.io/tags/mcss/" term="mcss"/>
+    <category scheme="http://leeluolee.github.io/tags/css/" term="css"/>
   </entry>
   <entry>
     <title type="html"><![CDATA[开始使用Hexo]]></title>
-    <link href="http://leeluolee.github.com/2013/03/02/use-hexo/"/>
-    <id>http://leeluolee.github.com/2013/03/02/use-hexo/</id>
+    <link href="http://leeluolee.github.io/2013/03/02/use-hexo/"/>
+    <id>http://leeluolee.github.io/2013/03/02/use-hexo/</id>
     <published>2013-03-02T03:34:51.000Z</published>
-    <updated>2013-08-01T15:11:51.000Z</updated>
+    <updated>2013-08-08T05:35:12.000Z</updated>
     <content type="html"><![CDATA[<p>去年毕业后配置Otcopress完后就没用过了,反正不会去折腾Ruby，发现问题也不好解决，索性就换到<a href="http://zespia.tw/hexo/">Hexo</a>了, 文档很丰富, 没有累赘的功能部署很快, 简单记录下</p>
 <a name="more"></a>
 
@@ -737,13 +792,14 @@ p{
   <span class="method">branch:</span> master
 </pre></td></tr></table></figure>
 
-<p>如果是项目的gh-pages, 则branch填gh-pages</p>
+<p>如果是项目的gh-pages, 则branch填gh-pages。完了之后如果还不行就进入<code>.deploy</code>目录手动添加一个名为<strong>github</strong> 的remote branch，例如
+<code>git remote add github {你仓库名}</code></p>
 <h2>书写</h2>
 <p>hexo支持摘要断行 <code>&lt;!-- more --&gt;</code></p>
 <h2>结尾</h2>
 <p>Hexo是一个很精简的blog generator &amp;&amp; deploy, 完全满足技术人员日常的博客需求, 使用过Octopress的应该是完全没有学习成本, 本人是典型极简癖, 跟这个Hexo简直是一拍即合</p>
 ]]></content>
-    <category scheme="http://leeluolee.github.com/tags/tool/" term="tool"/>
-    <category scheme="http://leeluolee.github.com/tags/nodejs/" term="nodejs"/>
+    <category scheme="http://leeluolee.github.io/tags/tool/" term="tool"/>
+    <category scheme="http://leeluolee.github.io/tags/nodejs/" term="nodejs"/>
   </entry>
 </feed>
