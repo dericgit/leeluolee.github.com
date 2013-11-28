@@ -159,15 +159,19 @@ root.innerHTML = '<style>p{color: red;}</style>'+
 
 ## 真实世界的例子
 
-  1. video
-  2. audeo
-  3. progress
-  4. input[type="datetime"]
-  5. ...很多...
+  1. video <video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls"></video>
+  2. audio   
+  <audio controls="controls">
+  <source src="http://www.w3school.com.cn/i/song.ogg" type="audio/ogg">
+  <source src="http://www.w3school.com.cn/i/song.mp3" type="audio/mpeg">
+  </audio>
+  3. progress  <progress></progress>
+  4. input[type="time"]  <input type='time'/>
+  5. ......
 
+> 许多内建UI封装的机制是与shadow dom一致的
 
 ---------------
-
 # nwd-progress——version 3
 
 
