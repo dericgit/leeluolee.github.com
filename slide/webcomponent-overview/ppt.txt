@@ -282,7 +282,7 @@ root.innerHTML = '<style>p{color: red;}</style>'+
 
 # Html Imports
 
-> 打包一切！
+> fetch this document so I can use it later
 
 ```xml
 <head>
@@ -322,7 +322,7 @@ root.innerHTML = '<style>p{color: red;}</style>'+
 ## html imports的简要阐述
 
 1. 有跨域限制(CORS-enabled needed)
-2. not block parse html，js是__按加载顺序执行__(defer)——无法通过ajax来完全模拟
+2. 会为import单独开辟html parser，而js是__按序执行__(并且defer)——无法通过ajax来完全模拟
 3. 可以为一整套资源提供一个统一的资源入口(url): 想象下bootstrap
 4. import的文档有自己的文档环境——`document.currentScript.ownerDocument;`
 5. JS的执行共用一套执行环境，即import的文档的`document`即全局`document`
